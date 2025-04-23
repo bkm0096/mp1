@@ -1,11 +1,12 @@
-import {useState} from "react";
+import { useState } from "react";
+import { FaCheckCircle } from "react-icons/fa";
 
 interface ResultComponentProps {
-    msg:string,
+    msg: string,
     closeFn: () => void
 }
 
-export default function ResultComponent({msg, closeFn } :ResultComponentProps ) {
+export default function ResultComponent({ msg, closeFn }: ResultComponentProps) {
 
     const [showFlag, setShowFlag] = useState(msg && true)
 
@@ -14,7 +15,7 @@ export default function ResultComponent({msg, closeFn } :ResultComponentProps ) 
         if (msg === "M") return "수정 완료";
         if (msg === "R") return "등록 완료";
         return msg;
-      }
+    }
 
     if (!showFlag) return null;
 
@@ -28,23 +29,10 @@ export default function ResultComponent({msg, closeFn } :ResultComponentProps ) 
                 closeFn();
             }}
         >
-            <div className="bg-white rounded-2xl p-6 shadow-xl w-72 text-center space-y-4">
-
-                <div className="flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                        <svg
-                            className="w-8 h-8 text-green-600"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth={3}
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M5 13l4 4L19 7"
-                            />
-                        </svg>
+            <div className="bg-white rounded-2xl p-8 shadow-2xl w-80 text-center space-y-6 mx-auto my-16">
+                <div className="flex items-center justify-center mb-4">
+                    <div className="w-20 h-20 rounded-full bg-green-100 flex items-center justify-center shadow-md">
+                        <FaCheckCircle className="w-12 h-12 text-green-600" />
                     </div>
                 </div>
 
