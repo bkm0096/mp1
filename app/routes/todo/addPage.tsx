@@ -5,7 +5,6 @@ function TodoAddPage() {
     
     return(
         <div>
-            <div className={'text-4xl'}>Add Page</div>
             <TodoAddComponent/>
         </div>
     )
